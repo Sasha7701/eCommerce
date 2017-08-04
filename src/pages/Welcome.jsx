@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 
-class Success extends Component {
+class Welcome extends Component {
 	render() {
 		return (
 			<div>
-				<h1>Hello, I'm About!</h1>
+				<h1>Welcome!</h1>
+				<p>Don't for get to buy a fine watch</p>
 			</div>
 		);
 	}
 }
 
-export default Success;
+export default Welcome;

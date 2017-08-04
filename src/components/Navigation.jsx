@@ -11,14 +11,8 @@ class Navigation extends Component {
 			to: "/products",
 			text: "Products",
 		}, {
-			to: "/item",
-			text: "Item",
-		}, {
 			to: "/cart",
 			text: "Cart",
-		}, {
-			to: "/success",
-			text: "Success",
 		}];
 
 		return (

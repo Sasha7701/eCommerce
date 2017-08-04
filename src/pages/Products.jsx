@@ -1,20 +1,30 @@
 import React, { Component } from "react";
 import PRODUCTS from "json/products.json";
+import { Link } from "react-router-dom";
 
 class Products extends Component {
 	render() {
 		return (
 			<div className = "Home">
-				{PRODUCTS.map((product) => {
-           	return (
+				{PRODUCTS.map((product, index) => {
+           	return ([
 						 <div>
-				  	<h1> {product.name} </h1>
+				  	<h1>{product.name}</h1>
 				   	<p>
-								{product.id}
-								{product.price}
+								{product.category}
 							</p>
-						</div>
-					);
+							<p>
+								${product.price}
+							</p>
+							<div>
+								<Link to={`/item/${index}`}>
+								 <img src = {product.images[0].medium}/>
+							 	 <img src = {product.images[1].medium}/>
+							  </Link>
+
+							</div>
+						</div>,
+					]);
 				})}
 
 			</div>
