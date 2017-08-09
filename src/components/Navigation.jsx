@@ -1,6 +1,7 @@
 import "./Navigation.scss";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import EmptyCart from "components/EmptyCart";
 
 class Navigation extends Component {
 	render() {
@@ -30,6 +31,7 @@ class Navigation extends Component {
 						</NavLink>
 					);
 				})}
+				<img src="https://www.seriousseeds.com/sites/default/files/popup-cart-icon.png" className="empty-cart"/>
 			</nav>
 		);
 	}

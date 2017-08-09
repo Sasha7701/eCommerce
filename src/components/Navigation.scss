@@ -17,6 +17,13 @@
 
 		&.is-active {
 			text-decoration: underline;
+
 		}
 	}
 }
+.empty-cart {
+	  width: 60px;
+  	display: inherit;
+    float: right;
+    position: relative;
+ }
