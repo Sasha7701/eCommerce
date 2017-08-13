@@ -1,10 +1,10 @@
 import "./Navigation.scss";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import EmptyCart from "components/EmptyCart";
 
 class Navigation extends Component {
 	render() {
+		const { cartCount } = this.props;
 		const links = [{
 			to: "/",
 			text: "Welcome",
@@ -31,6 +31,8 @@ class Navigation extends Component {
 						</NavLink>
 					);
 				})}
+
+				<span className = "cartCount">{ cartCount }</span>
 				<img src="https://www.seriousseeds.com/sites/default/files/popup-cart-icon.png" className="empty-cart"/>
 			</nav>
 		);

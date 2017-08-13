@@ -3,10 +3,12 @@ import PRODUCTS from "json/products.json";
 import { Link } from "react-router-dom";
 
 class Products extends Component {
+
 	render() {
+ 	const { products } = this.props;
 		return (
 			<div className = "Home">
-				{PRODUCTS.map((product, index) => {
+				{products.map((product, index) => {
            	return ([
 						 <div>
 				  	<h1>{product.name}</h1>
@@ -17,7 +19,7 @@ class Products extends Component {
 								${product.price}
 							</p>
 							<div>
-								<Link to={`/item/${index}`}>
+								<Link to={`/item/${product.id}`}>
 								 <img src = {product.images[0].medium}/>
 							 	 <img src = {product.images[1].medium}/>
 							  </Link>

@@ -22,8 +22,12 @@
 	}
 }
 .empty-cart {
-	  width: 60px;
+	  width: 55px;
   	display: inherit;
     float: right;
     position: relative;
  }
+.cartCount {
+	font-size: 15px;
+	float: right;
+}
