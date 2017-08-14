@@ -32,7 +32,7 @@ class Navigation extends Component {
 					);
 				})}
 
-				<span className = "cartCount">{ cartCount }</span>
+				<span className = "count">{ cartCount }</span>
 				<img src="https://www.seriousseeds.com/sites/default/files/popup-cart-icon.png" className="empty-cart"/>
 			</nav>
 		);

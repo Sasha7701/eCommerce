@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import PRODUCTS from "json/products.json";
+// import PRODUCTS from "json/products.json";
 import { Link } from "react-router-dom";
 
 class Products extends Component {
-
 	render() {
  	const { products } = this.props;
 		return (
@@ -19,7 +18,7 @@ class Products extends Component {
 								${product.price}
 							</p>
 							<div>
-								<Link to={`/item/${product.id}`}>
+								<Link  key={product.id} to={`/item/${product.id}`}>
 								 <img src = {product.images[0].medium}/>
 							 	 <img src = {product.images[1].medium}/>
 							  </Link>

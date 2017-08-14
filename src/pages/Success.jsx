@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import Checkout from "../components/Checkout";
 
 class Success extends Component {
 	render() {
 		return (
-			<div>
-				<h1>Hello, I'm About!</h1>
+			<div className="App">
+				<Checkout/>
 			</div>
 		);
 	}

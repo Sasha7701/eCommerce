@@ -7,18 +7,19 @@ class Item extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			// itemId: props.match.params.itemId,
-
 		};
 	}
 
+	_handleAddCart = (itemId) => {
+		this.props.handleAdd(this.props.item.id);
+	}
+
 	render() {
-		 //const item = PRODUCTS[this.state.itemId];
-		const { handleAdd, itemId, item,
-		} = this.props;
+		 // const item = PRODUCTS[this.state.itemId];
+		const { item, handleAdd } = this.props;
 
 		// console.log(PRODUCTS[this.state.itemId].name);
-		 console.log(this.props, "ssssssssssss");
+		 console.log(item, "ssssssssssss");
 		return (
 			<div className="item">
 				{/* <h1>{this.state.itemId}</h1> */}
@@ -30,7 +31,7 @@ class Item extends Component {
 					 ]);
 			  })}
 				</div>
-				<button className="addCart" onClick={handleAdd} value={item.id}>
+				<button className="addCart" onClick={this._handleAddCart} value={item.id}>
 				add Cart
 			  </button>
 				<div className = "text">

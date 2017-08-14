@@ -17,24 +17,24 @@ class App extends React.Component {
 			 cartCount: 0,
 		 };
 
+		 _getProduct = (itemId) => {
+		 	return this.state.products.reduce((prev, item) => {
+		 		return item.id === itemId ? item : prev;
+				});
+			}
 
-_handleAdd = (ev) => {
+_handleAdd = (itemId) => {
 	// let cart = this.state.cart.concat([ev.target.value])
 	const { products, cart } = this.state;
 	this.setState({
-		cart: [...this.state.cart, ev.target.value],
+		cart: [...cart, this._getProduct(itemId)],
 		cartCount: cart.length + 1,
 	});
-	console.log(ev.target.value);
 };
-addCart(ev) {
-	this.setState({ cart: this.state.cart });
-}
-_getProduct = (itemId) => {
-	return this.state.products.reduce((prev, item) => {
-		return item.id === itemId ? item : prev;
-	});
-}
+// addCart(ev) {
+// 	this.setState({ cart: this.state.cart });
+// }
+
 
 render() {
 	const { products, cart, cartCount } = this.state;
@@ -51,21 +51,21 @@ render() {
 							/>
 						);
 					}}
-					 />
+					/>
 
 					<Route exact path="/item/:itemId" render={(props) => {
+
 						return (
-							<Item {...props}
+							<Item
 					 handleAdd={this._handleAdd}
 					 item={this._getProduct(props.match.params.itemId)}
-					  />
+				 		/>
 					 );
 				 }}
 					/>
 					<Route exact path="/cart" render={(props) => {
 						return (
 							<Cart
-
 								cart={cart}
 								cartCount={cartCount}
 							/>
